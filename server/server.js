@@ -3,7 +3,7 @@ import cors from 'cors';
 import env from './config/dotenv.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { setupUserData } from './data/users.js';
+import { setupUserData } from '../tmp/users.js';
 
 import authRouter from './routes/authRoutes.js';
 import gameRouter from './routes/gameRoutes.js';

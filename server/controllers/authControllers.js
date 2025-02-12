@@ -1,4 +1,4 @@
-import { findUserByFingerprint, addUser, saveUserData } from "../data/users.js";
+import { findUserByFingerprint, addUser, saveUserData } from "../../tmp/users.js";
 
 export const loginVisitor=async (req,res)=>{
     const user = findUserByFingerprint(req.headers.visitorid);

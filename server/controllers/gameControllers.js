@@ -1,4 +1,4 @@
-import { createNewGame, findGame, removeGame, getAllGames, fetchGamesToJoin, newGameUser } from "../data/games.js";
+import { createNewGame, findGame, removeGame, getAllGames, fetchGamesToJoin, newGameUser } from "../../tmp/games.js";
 import { sendMessages } from "./messageControllers.js";
 
 export const fetchGameList=(req,res)=>{
@@ -45,7 +45,10 @@ export const cancelGame=(req,res)=>{
 export const leaveGame = (req,res)=>{
     const user = req.user;
     const game = req.game;
+    const player = game.players.find(player=>player.id==user.id);
     game.players = game.players.filter(player=>player.id!=user.id);
+    game.colors.push(player.color);
+    console.log(game.colors);
     sendMessages({action:'leave',message:user.id},game.players.map(player=>player.id));
     res.status(200).json({ok:1});
 }

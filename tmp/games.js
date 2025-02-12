@@ -1,34 +1,6 @@
-import { random } from "../utils/random.js";
+import { random } from "../server/utils/random.js";
 
 let gamesList=[];
-//     {
-//         id:3,
-//         host:'hera',
-//         players:[3,7],
-//         move:null,
-//         turn:1,
-//         colors:['red','green',],
-//         active:1
-//     },
-//     {
-//         id:1,
-//         host:'hera',
-//         players:[3,7],
-//         move:null,
-//         turn:1,
-//         colors:['red','green',],
-//         active:2
-//     },
-//     {
-//         id:5,
-//         host:'zeus',
-//         players:[3,7,9],
-//         move:null,
-//         turn:1,
-//         colors:['red',],
-//         active:1
-//     }
-// ];
 
 let gameCount=0;
 

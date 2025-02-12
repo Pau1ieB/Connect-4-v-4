@@ -1,4 +1,4 @@
-import { fetchUser } from "../data/users.js";
+import { fetchUser } from "../../tmp/users.js";
 
 export const findUser=(req,res,next)=>{
     let id = parseInt(req.headers.id);
