@@ -4,11 +4,11 @@ let userCount=0;
 
 export const setupUserData=async ()=>{
     try{
-        const file = await fs.readFile('./tmp/usersData','utf8');
+        const file = await fs.readFile('/tmp/usersData','utf8');
         users = JSON.parse(file);
         userCount = users.reduce((count,users)=>(count>users.id)?count:users.id,-1)+1;
     }catch(err){
-        await fs.writeFile(`./tmp/usersData`, JSON.stringify([]));
+        await fs.writeFile(`/tmp/usersData`, JSON.stringify([]));
     }
 }
 
@@ -30,5 +30,5 @@ export const findUserByFingerprint=visitorId=>{
 }
 
 export const saveUserData=async ()=>{
-    await fs.writeFile(`./tmp/usersData`, JSON.stringify(users));
+    await fs.writeFile(`/tmp/usersData`, JSON.stringify(users));
 }
