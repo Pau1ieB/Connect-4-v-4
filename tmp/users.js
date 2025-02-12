@@ -29,6 +29,8 @@ export const findUserByFingerprint=visitorId=>{
     return user;
 }
 
+export const fetchUsers=()=>users;
+
 export const saveUserData=async ()=>{
     await fs.writeFile(`./tmp/usersData`, JSON.stringify(users));
 }
