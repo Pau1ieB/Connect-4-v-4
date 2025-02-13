@@ -1,4 +1,4 @@
-import { findGame } from "../../tmp/games.js";
+import { findGame } from "../data/games.js";
 
 export const findAGame=(req,res,next)=>{
     if(!req.user){

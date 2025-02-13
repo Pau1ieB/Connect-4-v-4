@@ -3,13 +3,13 @@ import cors from 'cors';
 import env from './config/dotenv.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
-//import { setupUserData } from '../tmp/users.js';
+import { setupUserData } from './data/users.js';
 
 import authRouter from './routes/authRoutes.js';
 import gameRouter from './routes/gameRoutes.js';
 import messageRouter from './routes/messageRoutes.js';
 
-//await setupUserData();
+await setupUserData();
 
 const app = express();
 
@@ -24,8 +24,7 @@ app.use('/api/message/',messageRouter);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname,'../public')));
-app.set('views', __dirname + '/../views');
-//app.set('views','views');
+app.set('views','views');
 app.set('view engine','ejs');
 
 app.get('/',(req,res)=>{res.render('index');})

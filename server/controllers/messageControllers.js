@@ -1,4 +1,4 @@
-import { fetchUser } from "../../tmp/users.js";
+import { fetchUser } from "../data/users.js";
 
 export const getMessages=(req,res)=>{
     const user = req.user;

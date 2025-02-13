@@ -1,4 +1,4 @@
-import { random } from "../server/utils/random.js";
+import { random } from "../utils/random.js";
 
 let gamesList=[];
 
